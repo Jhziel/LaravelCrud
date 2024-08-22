@@ -12,7 +12,8 @@ class StudentController extends Controller
      */
     public function index()
     {
-        return 'index';
+        $students = Student::query()->orderBy('last_name', 'asc')->get();
+        return view('student.index', ['students' => $students]);
     }
 
     /**
@@ -20,7 +21,7 @@ class StudentController extends Controller
      */
     public function create()
     {
-        return 'create';
+        return view('student.create');
     }
 
     /**
@@ -36,7 +37,7 @@ class StudentController extends Controller
      */
     public function show(Student $student)
     {
-        return 'show';
+        return view('student.show', ['student' => $student]);
     }
 
     /**
@@ -44,7 +45,7 @@ class StudentController extends Controller
      */
     public function edit(Student $student)
     {
-        return 'edit';
+        return view('student.edit', ['student' => $student]);
     }
 
     /**
