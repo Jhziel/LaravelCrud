@@ -10,6 +10,11 @@
 </head>
 
 <body class="bg-slate-900 px-28">
+    @session('message')
+        <div>
+            {{ session('message') }}
+        </div>
+    @endsession
     {{ $slot }}
 </body>
 

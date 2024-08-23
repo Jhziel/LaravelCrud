@@ -29,7 +29,16 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->validate([
+            'last_name' => ['required', 'string'],
+            'first_name' => ['required', 'string'],
+            'age' => ['required', 'integer'],
+            'stud_id' => ['required', 'integer'],
+        ]);
+
+        $student = Student::create($data);
+
+        return to_route('student.show', $student)->with('message', 'New Student has been created');
     }
 
     /**

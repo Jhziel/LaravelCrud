@@ -8,6 +8,7 @@
         </div>
 
         <form action="{{ route('student.store') }}" method="POST" class="w-full flex flex-col justify-start items-center">
+            @csrf
             <div class="flex gap-3 ">
                 <div class="relative input-field">
                     <input id="name" type="text" name="first_name" id="first_name" required
@@ -34,7 +35,7 @@
             </div>
 
             <div class="relative input-field w-2/3 mt-5">
-                <input id="name" type="number" name="stud_num" id="stud_num" required
+                <input id="name" type="number" name="stud_id" id="stud_id" required
                     class="no-spinner w-full px-4 py-2 border border-zinc-950 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" />
                 <label for=""
                     class="absolute top-1/2 -translate-y-1/2 left-4 pointer-events-none transition-all duration-500 ease-ease">Enter
