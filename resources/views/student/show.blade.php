@@ -8,7 +8,7 @@
         </div>
         <div class="flex flex-col gap-3 items-center">
             <h1 class="text-2xl">FullName:{{ $student->first_name }} {{ $student->last_name }}</h1>
-            <h1 class="text-2xl">Age:{{ $student->age }} {{ $student->last_name }}</h1>
+            <h1 class="text-2xl">Age:{{ $student->age }} </h1>
             <h1 class="text-2xl">Student Id Number:{{ $student->stud_id }}</h1>
 
             <div class="flex gap-3">
