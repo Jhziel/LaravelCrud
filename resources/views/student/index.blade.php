@@ -34,10 +34,15 @@
                             {{ $student->age }}
                         </td>
                         <td class=" py-4 flex gap-x-2">
-                            <a href="{{ route('student.show', $student) }}" class="py-2 px-4 bg-yellow-700 text-slate-50">View</a>
+                            <a href="{{ route('student.show', $student) }}"
+                                class="py-2 px-4 bg-yellow-700 text-slate-50">View</a>
                             <a href="{{ route('student.edit', $student) }}"
                                 class="py-2 px-4  bg-blue-800 text-slate-50">Edit</a>
-                            <button class="py-2 px-4 bg-red-700 text-slate-50">Delete</button>
+                            <form action="{{ route('student.destroy', $student) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button class="py-2 px-4 bg-red-700 text-slate-50">Delete</button>
+                            </form>
                         </td>
                     </tr>
                 @endforeach

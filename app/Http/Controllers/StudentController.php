@@ -79,6 +79,8 @@ class StudentController extends Controller
      */
     public function destroy(Student $student)
     {
-        
+        $student->delete();
+
+        return to_route('student.index')->with('message', 'Student Data has been Deleted');
     }
 }
