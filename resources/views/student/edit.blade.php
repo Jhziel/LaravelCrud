@@ -7,11 +7,14 @@
             <h1 class="text-2xl text-slate-800 mb-14">Edit Student Data</h1>
         </div>
 
-        <form action="{{ route('student.show',$student) }}" method="POST" class="w-full flex flex-col justify-start items-center">
+        <form action="{{ route('student.update', $student) }}" method="POST"
+            class="w-full flex flex-col justify-start items-center">
             @csrf
+            @method('PUT')
             <div class="flex gap-3 ">
                 <div class="relative input-field">
-                    <input id="name" type="text" name="first_name" id="first_name" required value="{{$student->first_name}}"
+                    <input id="name" type="text" name="first_name" id="first_name" required
+                        value="{{ $student->first_name }}"
                         class="w-full px-4 py-2 border border-zinc-950 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" />
                     <label for=""
                         class="absolute top-1/2 -translate-y-1/2 left-4 pointer-events-none transition-all duration-500 ease-ease">Enter
@@ -19,7 +22,8 @@
                 </div>
 
                 <div class="relative input-field">
-                    <input id="name" type="text" name="last_name" id="last_name" required value="{{$student->last_name}}"
+                    <input id="name" type="text" name="last_name" id="last_name" required
+                        value="{{ $student->last_name }}"
                         class="w-full px-4 py-2 border border-zinc-950 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" />
                     <label for=""
                         class="absolute top-1/2 -translate-y-1/2 left-4 pointer-events-none transition-all duration-500 ease-ease">Enter
@@ -27,7 +31,7 @@
                 </div>
             </div>
             <div class="relative input-field w-2/3 mt-5">
-                <input id="name" type="number" name="age" id="age" required value="{{$student->age}}"
+                <input id="name" type="number" name="age" id="age" required value="{{ $student->age }}"
                     class="no-spinner w-full px-4 py-2 border border-zinc-950 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" />
                 <label for=""
                     class="absolute top-1/2 -translate-y-1/2 left-4 pointer-events-none transition-all duration-500 ease-ease">Enter
@@ -35,7 +39,8 @@
             </div>
 
             <div class="relative input-field w-2/3 mt-5">
-                <input id="name" type="number" name="stud_id" id="stud_id" required value="{{$student->stud_id}}"
+                <input id="name" type="number" name="stud_id" id="stud_id" required
+                    value="{{ $student->stud_id }}"
                     class="no-spinner w-full px-4 py-2 border border-zinc-950 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" />
                 <label for=""
                     class="absolute top-1/2 -translate-y-1/2 left-4 pointer-events-none transition-all duration-500 ease-ease">Enter

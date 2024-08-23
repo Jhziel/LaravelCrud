@@ -62,7 +62,16 @@ class StudentController extends Controller
      */
     public function update(Request $request, Student $student)
     {
-        //
+        $data = $request->validate([
+            'last_name' => ['required', 'string'],
+            'first_name' => ['required', 'string'],
+            'age' => ['required', 'integer'],
+            'stud_id' => ['required', 'integer'],
+        ]);
+
+        $student->update($data);
+
+        return to_route('student.show', $student)->with('message', 'New Student has been updated');
     }
 
     /**
@@ -70,6 +79,6 @@ class StudentController extends Controller
      */
     public function destroy(Student $student)
     {
-        //
+        
     }
 }
