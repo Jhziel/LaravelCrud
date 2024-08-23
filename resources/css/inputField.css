@@ -1,0 +1,20 @@
+.input-field input:valid ~ label {
+    top: 0;
+    background-color: white;
+    color: #3b82f6;
+}
+.input-field input:focus ~ label {
+    top: 0;
+    background-color: white;
+    color: #3b82f6;
+}
+
+.no-spinner::-webkit-inner-spin-button,
+.no-spinner::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.no-spinner {
+    -moz-appearance: textfield;
+}
