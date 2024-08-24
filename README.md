@@ -1,4 +1,4 @@
-<p align="center">Laravel Crud</p>
+<h2 align="center">Laravel Crud</h2>
     
 ## Purpose of this Project
 - Learn how to create new data.
